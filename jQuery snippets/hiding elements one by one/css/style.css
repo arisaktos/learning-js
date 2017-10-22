@@ -1,0 +1,17 @@
+body,
+p {
+    margin: 0;
+}
+
+#first {
+    background-color: green;
+    height: 50vh;
+    padding: 30px;
+    color: white;
+}
+
+#hideStaggered {
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+}
