@@ -1,3 +1,5 @@
 # learning-js
 
-Random bits of code made while learning js :3
+jQuery slider - simple slider made in jquery
+jQuery snippets - random, useful bits of jquery code 
+js randoms - random js tasks made for practice
