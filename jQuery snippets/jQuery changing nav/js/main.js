@@ -3,7 +3,10 @@
 //changing main nav backrground color on scroll
 
 $(window).scroll(function () {
+    dontRefresh();
+    changeLinksColor();
     scrolled();
+
 });
 
 
@@ -18,4 +21,28 @@ function scrolled() {
     } else {
         $('#main-nav').removeClass('blue-background');
     }
+}
+
+//changes link color after hover
+function changeLinksColor() {
+    var parent = $('#main-nav ul .list-item');
+    parent.each(function () {
+        $(this).mouseenter(function () {
+            $(this).find('a').css('color', 'grey');
+        }).mouseleave(function () {
+            $(this).find('a').css('color', 'white');
+        });
+    });
+}
+
+//prevents page reload on link click
+function dontRefresh() {
+    var parent = $('#main-nav ul .list-item a');
+    parent.each(function () {
+        $(this).click(function (event) {
+            if ($(this).attr('href') == '' || $(this).attr('href') == '#') {
+                event.preventDefault();
+            }
+        });
+    });
 }
