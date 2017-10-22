@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+}
+
+#akordeon .acordian {
+    background-color: hotpink;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 100px;
+}
