@@ -1,4 +1,5 @@
 # learning-js
+ajax - simple ways to retrieve data (practice)
 
 jQuery slider - simple slider made in jquery
 
