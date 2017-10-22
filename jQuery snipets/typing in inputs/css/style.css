@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+}
+
+#first {
+    background-color: green;
+    height: 50vh;
+}
+
+#added .prepend h1:empty {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+#main-nav {
+    height: 50px;
+    /*    przy zmianie pozycji na fixed lub absolute, block dopasowuje sie do contentu i nalezy pamietac zeby go zrobic width 100%*/
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    text-align: right;
+    background-color: black;
+    transition: all 0.4s;
+}
+
+#main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    line-height: 50px;
+}
+
+#main-nav ul .list-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#main-nav ul .list-item a {
+    color: white;
+    text-decoration: none;
+}
+
+#main-nav.blue-background {
+    background-color: blue;
+}
+
+#onMethod {
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+}
+
+#akordeon .acordian {
+    background-color: red;
+    border: 1px solid black;
+    box-sizing: border-box;
+}

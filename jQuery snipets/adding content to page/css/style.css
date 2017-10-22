@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+}
+
+#added {
+    background-color: pink;
+    padding: 50px;
+}
+
+#added .append {
+    background-color: hotpink;
+    padding: 10px;
+}
+
+#added .prepend {
+    background-color: grey;
+    padding: 10px;
+}
+
+#added .before {
+    background-color: blue;
+    padding: 10px;
+}
+
+#added .after {
+    background-color: yellow;
+    padding: 10px;
+}
