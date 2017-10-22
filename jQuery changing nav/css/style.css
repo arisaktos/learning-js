@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+.for-scrolling {
+    height: 150vh;
+}
+
+#main-nav {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    text-align: right;
+    background-color: black;
+    transition: all 0.4s;
+}
+
+#main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    line-height: 50px;
+}
+
+#main-nav ul .list-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#main-nav ul .list-item a {
+    color: white;
+    text-decoration: none;
+}
+
+#main-nav.blue-background {
+    background-color: blue;
+}
