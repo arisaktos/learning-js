@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bitcoin currency</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h2>Current Bitcoin currency to PLN</h2>
+    <h3>Buy</h3>
+    <p id="buy"></p><i class="fa fa-minus-square-o" aria-hidden="true" id="buy-arrow"></i>
+    <h3>Sell</h3>
+    <p id="sell"></p><i class="fa fa-minus-square-o" aria-hidden="true" id="sell-arrow"></i>
+<div class="control-buttons">
+    <h4>Refresh:</h4>
+    <button value="5000" class="control-button">5 seconds</button>
+    <button value="10000" class="control-button">10 seconds</button>
+    <button value="30000" class="control-button">30 seconds</button>
+    <button value="60000" class="control-button">60 seconds</button>
+    <h4>Refresh happens every: <span id="refresh-frequency"></span></h4>
+    
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
