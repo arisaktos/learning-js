@@ -1,0 +1,80 @@
+canvas {
+    display: block;
+}
+
+#bg {
+    text-align: center;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+background: rgba(0,0,0,1);
+background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,172,158,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(0,172,158,1)));
+background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,172,158,1) 100%);
+background: -o-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,172,158,1) 100%);
+background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,172,158,1) 100%);
+background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,172,158,1) 100%);
+
+}
+
+/*
+.xmas-wrapper
+{  background:rgba(248,64,24,1);
+width: 600px;
+    height: 600px;
+    border-radius: 50%;
+margin: auto;}
+*/
+
+.middle-copy {
+    margin: auto;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    width: 100%;
+  
+    z-index: 20;
+    text-align: center;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+.middle-copy .text {
+    text-align: center;
+    padding: 30px;
+    font-family: arial;
+    color: white;
+    /*  border: 2px solid white;*/
+    opacity: 1;
+    line-height: 1.5em;
+}
+
+
+
+.middle-copy .text h2 {
+    font-size: 5rem;
+    line-height: 1.1;
+       margin: 0px 0px 30px 0px;
+}
+
+.middle-copy .text h2 i
+{font-size: 4rem;}
+
+#newtext {
+    height: 50px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.holidaywishes {
+    display: inline-block;
+    font-size: 1.7rem;
+        margin: 0;
+}
+
+
