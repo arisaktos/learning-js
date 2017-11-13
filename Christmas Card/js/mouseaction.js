@@ -59,72 +59,84 @@ var COLOURS = [ '#fff', '#FFA211' ];
 var particles = [];
 var pool = [];
 
-var demo = Sketch.create({
-	container: document.getElementById( 'container' )
-});
 
-demo.setup = function() {
+function initBubbles(){
 
-	// Set off some initial particles.
-	var i, x, y;
+    var demo = Sketch.create({
+        container: document.getElementById( 'container' )
+    });
 
-	for ( i = 0; i < 20; i++ ) {
-		x = ( demo.width * 0.5 ) + random( -100, 100 );
-		y = ( demo.height * 0.5 ) + random( -100, 100 );
-		demo.spawn( x, y );
-	}
-};
 
-demo.spawn = function( x, y ) {
 
-	if ( particles.length >= MAX_PARTICLES )
-		pool.push( particles.shift() );
+    demo.setup = function() {
 
-	particle = pool.length ? pool.pop() : new Particle();
-	particle.init( x, y, random( 5, 20 ) );
+        // Set off some initial particles.
+        var i, x, y;
 
-	particle.wander = random( 0.5, 2.0 );
-	particle.color = random( COLOURS );
-	particle.drag = random( 0.9, 0.99 );
+        for ( i = 0; i < 20; i++ ) {
+            x = ( demo.width * 0.5 ) + random( -100, 100 );
+            y = ( demo.height * 0.5 ) + random( -100, 100 );
+            demo.spawn( x, y );
+        }
+    };
 
-	theta = random( TWO_PI );
-	force = random( 2, 8 );
 
-	particle.vx = sin( theta ) * force;
-	particle.vy = cos( theta ) * force;
 
-	particles.push( particle );
+    demo.spawn = function( x, y ) {
+
+
+        if ( particles.length >= MAX_PARTICLES )
+            pool.push( particles.shift() );
+
+        particle = pool.length ? pool.pop() : new Particle();
+        particle.init( x, y, random( 5, 20 ) );
+
+        particle.wander = random( 0.5, 2.0 );
+        particle.color = random( COLOURS );
+        particle.drag = random( 0.9, 0.99 );
+
+        theta = random( TWO_PI );
+        force = random( 2, 8 );
+
+        particle.vx = sin( theta ) * force;
+        particle.vy = cos( theta ) * force;
+
+        particles.push( particle );
+    }
+
+    demo.update = function() {
+
+        var i, particle;
+
+        for ( i = particles.length - 1; i >= 0; i-- ) {
+
+            particle = particles[i];
+
+            if ( particle.alive ) particle.move();
+            else pool.push( particles.splice( i, 1 )[0] );
+        }
+    };
+
+    demo.draw = function() {
+
+        demo.globalCompositeOperation  = 'soft-light';
+
+        for ( var i = particles.length - 1; i >= 0; i-- ) {
+            particles[i].draw( demo );
+        }
+    };
+
+    demo.mousemove = function() {
+
+        var particle, theta, force, touch, max, i, j, n;
+
+        for ( i = 0, n = demo.touches.length; i < n; i++ ) {
+
+            touch = demo.touches[i], max = random( 1, 4 );
+            for ( j = 0; j < max; j++ ) demo.spawn( touch.x, touch.y );
+        }
+    };
+
 }
 
-demo.update = function() {
-
-	var i, particle;
-
-	for ( i = particles.length - 1; i >= 0; i-- ) {
-
-		particle = particles[i];
-
-		if ( particle.alive ) particle.move();
-		else pool.push( particles.splice( i, 1 )[0] );
-	}
-};
-
-demo.draw = function() {
-
-	demo.globalCompositeOperation  = 'soft-light';
-	
-	for ( var i = particles.length - 1; i >= 0; i-- ) {
-		particles[i].draw( demo );
-	}
-};
-
-demo.mousemove = function() {
-
-	var particle, theta, force, touch, max, i, j, n;
-
-	for ( i = 0, n = demo.touches.length; i < n; i++ ) {
-
-		touch = demo.touches[i], max = random( 1, 4 );
-		for ( j = 0; j < max; j++ ) demo.spawn( touch.x, touch.y );
-	}
-};
+setTimeout(initBubbles, 6000);
