@@ -98,7 +98,7 @@ console.log(ww);
 
 
 $( document ).ready(function() {
-  initScene("Happy");
+  initScene("Wishing you and your family");
 });
 
 $( window ).resize(function() {
