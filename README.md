@@ -6,3 +6,5 @@ jQuery slider - simple slider made in jquery
 jQuery snippets - random, useful bits of jquery code 
 
 js randoms - random js tasks made for practice
+
+json random user generator - example of using fetch
